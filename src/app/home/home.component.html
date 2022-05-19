@@ -2,6 +2,8 @@
 <p>home works!</p>
 <p>Component home</p>
 <p> {{ name }} Muốn học tốt angular</p>
-<input [value] = " name "  title="tên" />  <br/>
-
+<input [value] = " name "  [(ngModel)]="name" />  <br/>
+<p *ngIf = " age >= 18 "> {{ name }} đến tuổi có bồ  </p>
+<p *ngIf = " age <  18 "> {{ name }} chưa đủ tuổi có bồ  </p>
+<button (click)="resetName()">Bấm</button>
 </div>
