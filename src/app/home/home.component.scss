@@ -4,3 +4,10 @@
   box-shadow: 5px 10px black;
   width:400px;  height:300px;
 }
+.table ,td,th {
+  border-collapse: collapse;
+  border: 1px solid black;
+}
+.so-am{
+  color: red;
+}

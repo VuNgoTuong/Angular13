@@ -2,8 +2,36 @@
 <p>home works!</p>
 <p>Component home</p>
 <p> {{ name }} Muốn học tốt angular</p>
-<input [value] = " name "  [(ngModel)]="name" />  <br/>
-<p *ngIf = " age >= 18 "> {{ name }} đến tuổi có bồ  </p>
-<p *ngIf = " age <  18 "> {{ name }} chưa đủ tuổi có bồ  </p>
-<button (click)="resetName()">Bấm</button>
+<input [value] = " name "  [(ngModel)]="age" />  <br/>
+<p>Tuổi của bạn là {{ age }} </p>
+<!-- <p *ngIf = " age >= 18 && age <= 100"> đến tuổi có bồ  </p>
+<p *ngIf = " age <  18 && age >= 0 "> chưa đủ tuổi có bồ  </p> -->
+<div *ngIf = " age >= 18; then den; else chua;"></div>
+<ng-template #den><h2> đến tuổi có bồ </h2></ng-template>
+<ng-template #chua><h2> chưa đủ tuổi có bồ </h2></ng-template>
+<!-- <button (click)="resetName()">Bấm</button> -->
+<h2>Tỉnh/ Thành Phố</h2>
+<select id="cities" (change)="changeCity($event)">
+  <option *ngFor="let city of cities" value="{{ city.city }}">{{ city.city }}</option>
+</select>
+<h2>Quận Huyện</h2>
+<select id="district">
+  <option *ngFor="let dist of district " value="dist">{{ dist }}</option>
+</select>
 </div>
+ <!-- <div>
+  <p>Component home</p>
+  <h2> Mau</h2>
+
+  <table id="table">
+    <tr>
+      <th>Màu Sắc</th>
+      <th>english</th>
+    </tr>
+    <tr *ngFor ="let mausac of mau1; let i=index">
+      <td>{{ mausac.ten | uppercase }}</td>
+      <td [ngClass]="{'so-am': true}">{{ i+1 }}</td>
+    </tr>
+  </table>
+</div> -->
+
